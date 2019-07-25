@@ -11,13 +11,26 @@ class App extends React.Component {
     }
     this.handleChange=this.handleChange.bind(this)
   }
+  // this is the hard part.  setting state
   handleChange(id){
     console.log("changing", id)
+
+    this.setState(prevState=>{
+      const updatedTodos = prevState.todos.map(todo=>{
+        if(todo.id===id){
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
+      return {
+        todos: updatedTodos
+      }
+    })
   }
   render(){
     const todos = this.state.todos.map(todo=>{
       return (
-        <Todo id={todo.id} key={todo.id} handleChange={this.handleChange} desc={todo.desc} completed={todo.completed}/>
+        <Todo completed = {todo.completed} id={todo.id} key={todo.id} handleChange={this.handleChange} desc={todo.desc} completed={todo.completed}/>
       )
     })
     return (

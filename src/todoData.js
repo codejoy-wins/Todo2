@@ -2,7 +2,7 @@ const todoData = [
     {
         id: 1,
         desc: "Take out the garbage",
-        completed: true
+        completed: false,
     },
     {
         id: 2,
