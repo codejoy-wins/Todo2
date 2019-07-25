@@ -39,6 +39,9 @@ class App extends React.Component {
           <h1>Todo App 2</h1>
         </header>
         {todos}
+        <footer>
+          <a href="https://maxjann.com">Jann Software</a>
+        </footer>
       </div>
     );
   }
