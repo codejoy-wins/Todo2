@@ -8,7 +8,7 @@ function Todo(props){
     }
     return (
         <div>
-            <input type="checkbox"></input>
+            <input onClick={()=>props.handleChange(props.id)} type="checkbox"></input>
             <h3 style={MySty}>{props.desc}</h3>
         </div>
     )
